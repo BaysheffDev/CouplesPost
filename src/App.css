@@ -31,3 +31,56 @@
     transform: rotate(360deg);
   }
 }
+
+#Container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.timeline {
+  display: flex;
+  flex-wrap: wrap;
+  width: 80%;
+}
+
+.day{
+    border-radius: 1px;
+    box-shadow: 1px 1px 1px lightgrey;
+    width: 16px;
+    height: 16px;
+    margin: 1.5px;
+    display: flex;
+    transition-property: background;
+    transition-duration: 0.2s;
+}
+.greenDay:hover {
+  transform: scale(1.2);
+  background: green;
+}
+.blueDay {
+  color: #e6adad;
+}
+.greenDay {
+  color: #90ee98;
+}
+.greyDay {
+  color: #dfdfdf;
+}
+.redDay {
+  color: red;
+}
+
+.day svg {
+  width: 100%;
+  height: 100%;
+}
+
+.dayContent {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    width: 100%;
+    height: 100%;
+    font-size: 0.4em;
+}
