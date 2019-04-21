@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import Day from './Day/day.js';
+import Details from './Day/details.js';
+import Card from './Day/card.js';
+
 import Moment from 'react-moment';
 var moment = require('moment');
 
@@ -113,16 +116,18 @@ export default class Timeline extends Component {
 		return (
 
 			<div>
-			{moment().format()}====
-			{this.todaysDate()}=====
-			{this.daysDifference(this.state.start, this.todaysDate(), 'days')}=====
-            
-			<div className="timeline">
-				{
-					this.getDays(this.getIntervals(this.state.start, this.state.together, this.state.end))
-				}
-				<Day colour={'redDay'}/>
-			</div>
+				{moment().format()}====
+				{this.todaysDate()}=====
+				{this.daysDifference(this.state.start, this.todaysDate(), 'days')}=====
+
+				<div className="timeline">
+					{
+						this.getDays(this.getIntervals(this.state.start, this.state.together, this.state.end))
+					}
+					<Day colour={'redDay'}/>
+				</div>
+				<Details />
+				<Card />
 			</div>
 		);
 	}
