@@ -34,7 +34,13 @@ export default class Timeline extends Component {
 			visit: "blueDay",
 			apart: "greenDay",
 			futureApart: "greyDay",
+
+			card: true,
 		}
+	}
+
+	showCard = () => {
+		this.setState({card: true}, () => console.log("works!"));
 	}
 
 	todaysDate() {
@@ -126,8 +132,8 @@ export default class Timeline extends Component {
 					}
 					<Day colour={'redDay'}/>
 				</div>
-				<Details />
-				<Card />
+				<Details showCard={this.showCard}/>
+				<Card showCard={this.state.card}/>
 			</div>
 		);
 	}

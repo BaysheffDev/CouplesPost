@@ -15,6 +15,79 @@ body {
   }
 }
 
+.hide {
+  display: none!important;
+}
+
+/**** Header ****/
+.header {
+  height: 60px;
+  width: 95%;
+  display: flex;
+  box-shadow: 1px 1px 3px lightgrey;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 2.5%;
+}
+.headerLeft {
+  display: flex;
+  width: 150px;
+}
+.headerMenu {
+  display: flex;
+  align-items: center;
+}
+.headerMenuItem {
+  width: 150px;
+  height: 30px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 3px grey;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
+}
+.headerMenuItemTitle {
+  padding-top: 4px;
+  margin-left: 5px;
+}
+.headerNames {
+  display: flex;
+  width: 150px;
+  justify-content: flex-end;
+}
+.headerTabIcon {
+  font-size: 0.8em;
+}
+.headerHeart {
+  color: red;
+  margin: 0px 5px;
+  font-size: 0.5em;
+}
+.logo, .headerNames {
+  font-family: 'Caveat', cursive;
+}
+.gridTab {
+  box-shadow: 0px 0px 3px 1px #43ea00;
+}
+.gridTab .headerTabIcon {
+  color: #43ea00;
+}
+.goalsTab {
+  box-shadow: 0px 0px 3px 1px #ffe200;
+}
+.goalsTab .headerTabIcon {
+  color: #ffe200;
+}
+.collectionTab {
+  box-shadow: 0px 0px 3px 1px #ff8a9e;
+}
+.collectionTab .headerTabIcon {
+  color: #ff8a9e;
+}
+
+/******************/
+/**** Timeline and Day ****/
 #Container {
   width: 100%;
   display: flex;
@@ -27,7 +100,7 @@ body {
   width: 80%;
 }
 
-.day{
+.day {
     border-radius: 1px;
     box-shadow: 1px 1px 1px lightgrey;
     width: 16px;
@@ -265,7 +338,15 @@ body {
   border-bottom: 3px solid #ffde59;;
   height: 10px;
 }
-
+.appreciationUnderline {
+  border-bottom: 3px solid #ffde59;
+}
+.notesUnderline {
+  border-bottom: 3px solid #ff914d;
+}
+.memoriesUnderline {
+  border-bottom: 3px solid #7ed957;
+}
 .cardPost {
   width: 85%;
   position: relative;

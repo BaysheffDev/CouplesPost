@@ -6,34 +6,49 @@ export default class Card extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-      tab: 1,
+      card: this.props.showCard,
+      selectedTab: "appreciation",
 		}
 	}
 
+  componentWillReceiveProps(props) {
+    this.setState({card: this.props.showCard}, () => console.log("hmmmm"));
+  }
+
+  hideCard = () => {
+    this.setState({card: false});
+  }
+
+  underlineTab = (tab) => {
+    this.setState({selectedTab: tab});
+  }
+
 	render() {
 		return (
-			<div className="cardContainer">
+			<div className={`cardContainer ${this.state.card ? "" : "hide"}`}>
         <div className="cardArrow"></div>
         <div className="card">
           <div className="cardTopRow">
             <div className="cardTopRowBox cardTopRowType">Apart</div>
             <div className="cardTopRowBox cardTopRowDate">06/12/2017</div>
             <div className="cardTopRowBox cardTopRowButton">
-              <div className="cardTopRowX">
+              <div className="cardTopRowX" onClick={this.hideCard}>
                 <FontAwesomeIcon icon={faTimes} className="cardX"/>
               </div>
             </div>
           </div>
           <div className="cardTabBar">
-            <div className="cardTab cardTab1">
+            <div className="cardTab cardTab1" onClick={() => this.underlineTab("appreciation")}>
               <FontAwesomeIcon icon={faHeart} className="cardIcon cardIcon1"/><div className="cardTabTitle">Appreciation</div>
-              <div className="cardTabUnderline"></div>
+              <div className={this.state.selectedTab === "appreciation" ? "cardTabUnderline appreciationUnderline" : ""}></div>
             </div>
-            <div className="cardTab cardTab2">
+            <div className="cardTab cardTab2" onClick={() => this.underlineTab("notes")}>
               <FontAwesomeIcon icon={faPencilAlt} className="cardIcon cardIcon2"/><div className="cardTabTitle">Notes</div>
+                <div className={this.state.selectedTab === "notes" ? "cardTabUnderline notesUnderline" : ""}></div>
             </div>
-            <div className="cardTab cardTab3">
+            <div className="cardTab cardTab3" onClick={() => this.underlineTab("memories")}>
               <FontAwesomeIcon icon={faLock} className="cardIcon cardIcon3"/><div className="cardTabTitle">Memories</div>
+              <div className={this.state.selectedTab === "memories" ? "cardTabUnderline memoriesUnderline" : ""}></div>
             </div>
           </div>
           <div className="cardRow3">

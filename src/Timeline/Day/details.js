@@ -16,7 +16,7 @@ export default class Details extends Component {
         <div className="details">
           <div className="detailsTopRow">
             <div className="detailsTopRowDate">06/12/2017</div>
-            <div className="detailsTopRowButton">See day <FontAwesomeIcon icon={faChevronDown} className=""/></div>
+            <div className="detailsTopRowButton" onClick={this.props.showCard}>See day <FontAwesomeIcon icon={faChevronDown} className=""/></div>
           </div>
           <div className="detailsBottomRow">
             <div className="detailsStats detailsStats1">
